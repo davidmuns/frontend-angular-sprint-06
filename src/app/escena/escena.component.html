@@ -1,13 +1,7 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 px-0">
-            <div class="btn-group w-100 py-3">
-                <button class="btn btn-secondary p-3">Anterior</button>
-                <button class="btn btn-secondary">Següent</button>
-            </div>
-        </div>
-    </div>
-</div>
+<button (click)="prev()">Anterior</button>
+<button (click)="next()">Següent</button>
 
-
-<p class="story-msg" *ngFor="let story of stories">{{story.content}}</p>
+<p class="story-msg" *ngFor="let story of stories let indice = index;"
+    [ngClass]=" {'colored-bg': indice == getCurrentScene(), 'uncolored-bg': indice != getCurrentScene()} ">
+    {{story.content}}
+</p>
