@@ -4,9 +4,17 @@
     border: 1px solid black;
     border-radius: 20px;
     text-align: center;
-
 }
 
-.btn {
-    border: 1px solid black;
+button {
+    width: 50%;
+    padding: 1%;
+}
+
+.colored-bg {
+    background-color: pink;
+}
+
+.uncolored-bg {
+    background-color: white;
 }
