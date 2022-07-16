@@ -4,13 +4,22 @@ import { IScene } from '../iscene';
 
 @Component({
   selector: 'app-home',
-  template: `<app-escena [parentData]="scenes"></app-escena>`
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+
 })
 export class HomeComponent implements OnInit {
   @Input() public scenes: IScene[] = scenesJson;
   constructor() { }
 
+  page: boolean = false;
+
   ngOnInit(): void {
+
+  }
+
+  switchPage() {
+    this.page = true;
   }
 
 }
