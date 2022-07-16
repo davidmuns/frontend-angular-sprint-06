@@ -1,6 +1,6 @@
 import { SelectorListContext } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
-import { IStory } from './../istory';
+import { IScene } from '../iscene';
 
 @Component({
   selector: 'app-escena',
@@ -8,7 +8,7 @@ import { IStory } from './../istory';
   styleUrls: ['./escena.component.css']
 })
 export class EscenaComponent implements OnInit {
-  @Input('parentData') public stories: IStory[] = [];
+  @Input('parentData') public scenes: IScene[] = [];
   private currentScene: number = 0;
   constructor() { }
 
@@ -16,17 +16,11 @@ export class EscenaComponent implements OnInit {
   }
 
   prev() {
-    if (this.currentScene == 0)
-      this.currentScene = this.stories.length - 1;
-    else
-      this.currentScene--;
+    this.currentScene === 0 ? this.currentScene = this.scenes.length - 1 : this.currentScene--;
   }
 
   next() {
-    if (this.currentScene == this.stories.length - 1)
-      this.currentScene = 0;
-    else
-      this.currentScene++;
+    this.currentScene === this.scenes.length - 1 ? this.currentScene = 0 : this.currentScene++;
   }
 
   getCurrentScene = () => this.currentScene;
