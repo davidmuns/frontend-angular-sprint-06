@@ -1,7 +1,9 @@
-<button (click)="prev()">Anterior</button>
-<button (click)="next()">Següent</button>
+<div style="margin: 10px">
+    <button (click)="prev()">Anterior</button>
+    <button (click)="next()">Següent</button>
+</div>
 
-<p class="story-msg" *ngFor="let story of stories let indice = index;"
-    [ngClass]=" {'colored-bg': indice == getCurrentScene(), 'uncolored-bg': indice != getCurrentScene()} ">
-    {{story.content}}
+<p class="scene-txt" *ngFor="let scene of scenes; let i = index;" [ngClass]="{'colored-bg': i == getCurrentScene()}">
+    {{scene.text}}
 </p>
+<p style="text-align: center;">Current scene: {{getCurrentScene()}}</p>
