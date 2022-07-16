@@ -1,0 +1,10 @@
+<div class="container" *ngIf="!page">
+    <h1 style="text-align: center;">Home Page</h1>
+    <div class="btn-div">
+        <button class="btn bg-primary" (click)="switchPage()">Go scenes</button>
+    </div>
+</div>
+
+<div *ngIf="page">
+    <app-escena [parentData]="scenes"></app-escena>
+</div>
