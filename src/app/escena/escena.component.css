@@ -1,4 +1,4 @@
-.story-msg {
+.scene-txt {
     padding: 10px;
     margin: 10px;
     border: 1px solid black;
@@ -13,8 +13,4 @@ button {
 
 .colored-bg {
     background-color: pink;
-}
-
-.uncolored-bg {
-    background-color: white;
 }
