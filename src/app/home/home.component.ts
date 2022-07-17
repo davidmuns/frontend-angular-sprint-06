@@ -10,7 +10,8 @@ import { IScene } from '../iscene';
 })
 export class Home implements OnInit {
   @Input() public scenes: IScene[] = scenesJson;
-  private switch: boolean = false;
+  private _switch: boolean = false;
+
 
   constructor() { }
 
@@ -18,7 +19,15 @@ export class Home implements OnInit {
 
   }
   public switchOn = () => this.switch = true;
-  public getSwitch = () => this.switch;
+
+  public get switch(): boolean {
+    return this._switch;
+  }
+
+  public set switch(value: boolean) {
+    this._switch = value;
+  }
+
 }
 
 
