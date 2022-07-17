@@ -3,6 +3,9 @@
     <button (click)="prev()">Anterior</button>
     <button (click)="next()">Següent</button>
 </div>
-<p class="scene-txt" *ngFor="let scene of scenes; let i = index;" [ngClass]="{'colored-bg': i == currentScene}">
+<!-- <p class="scene-txt" *ngFor="let scene of scenes; let i = index;" [ngClass]="{'colored-bg': i == currentScene}">
+    {{scene.text}}
+</p> -->
+<p class="scene-txt" *ngFor="let scene of scenes; let i = index;" [class.colored-bg]="i == currentScene">
     {{scene.text}}
 </p>
