@@ -1,8 +1,8 @@
-<img [src]="getImgBasePath() + scenes[getCurrentScene()].img" alt="">
+<img [src]="imgBasePath + scenes[currentScene].img" alt="">
 <div style="margin: 10px">
     <button (click)="prev()">Anterior</button>
     <button (click)="next()">Següent</button>
 </div>
-<p class="scene-txt" *ngFor="let scene of scenes; let i = index;" [ngClass]="{'colored-bg': i == getCurrentScene()}">
+<p class="scene-txt" *ngFor="let scene of scenes; let i = index;" [ngClass]="{'colored-bg': i == currentScene}">
     {{scene.text}}
 </p>
