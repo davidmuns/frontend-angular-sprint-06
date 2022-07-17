@@ -1,4 +1,4 @@
-<div class="container mt-3" *ngIf="getSwitch() == false">
+<div class="container mt-3" *ngIf="switch == false">
     <h1 style="text-align: center;">Home Page</h1>
     <div class="row mt-5">
         <div class="col d-flex justify-content-center">
@@ -7,6 +7,6 @@
     </div>
 </div>
 
-<div *ngIf="getSwitch() == true">
+<div *ngIf="switch == true">
     <app-escena [parentData]="scenes"></app-escena>
 </div>
