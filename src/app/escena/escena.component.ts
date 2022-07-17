@@ -9,8 +9,9 @@ import { IScene } from '../iscene';
 })
 export class Escena implements OnInit {
   @Input('parentData') public scenes: IScene[] = [];
-  private currentScene: number = 0;
-  private imgBasePath: string = '../assets/img/';
+  private _currentScene: number = 0;
+  private _imgBasePath: string = '../assets/img/';
+
 
   constructor() { }
 
@@ -25,7 +26,17 @@ export class Escena implements OnInit {
     this.currentScene === this.scenes.length - 1 ? this.currentScene = 0 : this.currentScene++;
   }
 
-  public getCurrentScene = () => this.currentScene;
-  public getImgBasePath = () => this.imgBasePath;
+  public get imgBasePath(): string {
+    return this._imgBasePath;
+  }
+  public set imgBasePath(value: string) {
+    this._imgBasePath = value;
+  }
 
+  public get currentScene(): number {
+    return this._currentScene;
+  }
+  public set currentScene(value: number) {
+    this._currentScene = value;
+  }
 }
