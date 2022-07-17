@@ -12,7 +12,6 @@ export class Escena implements OnInit {
   private _currentScene: number = 0;
   private _imgBasePath: string = '../assets/img/';
 
-
   constructor() { }
 
   ngOnInit(): void {
