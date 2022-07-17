@@ -12,7 +12,6 @@ export class Home implements OnInit {
   @Input() public scenes: IScene[] = scenesJson;
   private _switch: boolean = false;
 
-
   constructor() { }
 
   ngOnInit(): void {
