@@ -7,22 +7,25 @@ import { IScene } from '../iscene';
   templateUrl: './escena.component.html',
   styleUrls: ['./escena.component.css']
 })
-export class EscenaComponent implements OnInit {
+export class Escena implements OnInit {
   @Input('parentData') public scenes: IScene[] = [];
   private currentScene: number = 0;
+  private imgBasePath: string = '../assets/img/';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  prev() {
+  public prev = () => {
     this.currentScene === 0 ? this.currentScene = this.scenes.length - 1 : this.currentScene--;
   }
 
-  next() {
+  public next = () => {
     this.currentScene === this.scenes.length - 1 ? this.currentScene = 0 : this.currentScene++;
   }
 
-  getCurrentScene = () => this.currentScene;
+  public getCurrentScene = () => this.currentScene;
+  public getImgBasePath = () => this.imgBasePath;
 
 }
