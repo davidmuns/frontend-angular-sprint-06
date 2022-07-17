@@ -8,18 +8,17 @@ import { IScene } from '../iscene';
   styleUrls: ['./home.component.css']
 
 })
-export class HomeComponent implements OnInit {
+export class Home implements OnInit {
   @Input() public scenes: IScene[] = scenesJson;
-  constructor() { }
+  private switch: boolean = false;
 
-  page: boolean = false;
+  constructor() { }
 
   ngOnInit(): void {
 
   }
-
-  switchPage() {
-    this.page = true;
-  }
-
+  public switchOn = () => this.switch = true;
+  public getSwitch = () => this.switch;
 }
+
+
